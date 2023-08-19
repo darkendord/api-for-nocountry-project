@@ -1,0 +1,31 @@
+###
+POST http://localhost:9000/api/customers HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Ana Lara",
+    "age": "25",
+    "email": "somemail@email.com"
+}
+
+###
+GET http://localhost:9000/api/customers HTTP/1.1
+
+###
+GET http://localhost:9000/api/customers/62eaa44556611b2a5bb827fa HTTP/1.1
+
+
+###
+PUT  http://localhost:9000/api/customers/62eaa44556611b2a5bb827fa HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Alondra Lar",
+    "age": "25",
+    "email": "somemail@email.com",
+    "comments":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+}
+
+
+###
+DELETE  http://localhost:9000/api/customers/62eaa269d4c47217880773ef HTTP/1.1
