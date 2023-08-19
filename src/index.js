@@ -15,17 +15,6 @@ app.use(express.json());
 app.use("/api", userRoutes);
 app.use("/api", employeeRoutes);
 
-// mongodb connection
-const connectDB = async()=>{
-try{
-const connect = await mongoose.connect(process.env.MONGODB_URI);
-console.log(`MongoDB Connected`)
-}catch(err){
-    console.log(error);
-    process.exit(1);
-}
-}
-
 
 // Routes
 app.get("/", (req, res)=>{
@@ -33,8 +22,9 @@ app.get("/", (req, res)=>{
 });
 
 
+// mongodb connection
+mongoose.connect(process.env.MONGODB_URI)
+.then(()=> console.log("Connected to mongodb Altlas"))
+.catch((err)=>console.error(err)); 
 
-
-connectDB().then(() => {
- app.listen(port, ()=> console.log("Server listening on port", port));
-});
+app.listen(port, ()=> console.log("Server listening on port", port));
