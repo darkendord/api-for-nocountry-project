@@ -33,10 +33,6 @@ const userSchema = mongoose.Schema({
     profileStatus:{
         type: Boolean,
         required: true
-    },
-    products:{
-        type: Array,
-        required: true
     }
 });
 
