@@ -46,7 +46,7 @@ router.get("/customers/:id/products/:id", async (req, res)=>{
 router.put("/customers/:id/products/:id", async(req, res)=>{
     try{
     const {id} = req.params;
-    const {product_name, balance, status, product_type, product_number, expirationDate} = req.body;
+    const {product_name, balance, status, product_type, product_number, expirationDate,activities} = req.body;
     const data = await productSchema.updateOne(
         {_id:id},
         {
@@ -57,6 +57,7 @@ router.put("/customers/:id/products/:id", async(req, res)=>{
             product_type, 
             product_number, 
             expirationDate,
+            activities
         }})
     res.json(data)
     }

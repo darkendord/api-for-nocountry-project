@@ -25,6 +25,10 @@ const productSchema = mongoose.Schema({
     expirationDate:{
         type: String,
         required: true
+    },
+    activities:{
+        type: Array,
+        required: false
     }
 });
 
