@@ -33,6 +33,10 @@ const userSchema = mongoose.Schema({
     profileStatus:{
         type: Boolean,
         required: true
+    },
+    beneficiaries:{
+        type: Array,
+        required: true
     }
 });
 

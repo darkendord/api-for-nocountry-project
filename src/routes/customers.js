@@ -46,8 +46,8 @@ router.get("/customers/:id", async (req, res)=>{
 router.put("/customers/:id", async(req, res)=>{
     try{
     const {id} = req.params;
-    const {name, age, email, ssn, address, phone, type, profileStatus, comments} = req.body;
-    const data = await userSchema.updateOne({_id:id},{$set:{name, age, email, ssn, address, phone, type, profileStatus, comments}})
+    const {name, age, email, ssn, address, phone, type, profileStatus, comments, beneficiaries} = req.body;
+    const data = await userSchema.updateOne({_id:id},{$set:{name, age, email, ssn, address, phone, type, profileStatus, comments, beneficiaries}})
     res.json(data)
     }
     catch(err){
